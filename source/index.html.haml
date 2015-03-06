@@ -1,4 +1,27 @@
-.welcome
-  %h1 Middleman is Watching
-  %p.doc
-    = link_to 'Read Online Documentation', 'http://middlemanapp.com/'
+#main-wrapper
+  #header.main-section.row
+    .telephone-section.col-md-5
+      = link_to 'tel:4155068410' do
+        .icon.telephone
+        %p (415)5068410
+
+    .social-links.col-md-7
+      %ul
+        %li
+          = link_to 'mailto:test@mail.com' do
+            .icon.email
+        %li
+          = link_to '#' do
+            .icon.twitter
+        %li
+          = link_to '#' do
+            .icon.github
+        %li
+          = link_to '#' do
+            .icon.facebook
+
+  #home.main-section
+    %p
+      Bussines Development Executibe of DevGile, a Web and Mobile apps development
+      consultancy, with experience in Android, Ruby, Ruby on Rails and Javascript.
+
