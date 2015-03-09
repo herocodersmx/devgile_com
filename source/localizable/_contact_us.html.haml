@@ -1,0 +1,20 @@
+#contact_us.main-section
+  .section-title Contact us
+  #social-links
+    .row
+      .col.col-md-3
+        = link_to('mailto:contact@devgile.com') do
+          #email-contact
+      .col.col-md-3
+        = link_to('https://twitter.com/devgile', :target => '_blank') do
+          #twitter-contact
+      .col.col-md-3
+        = link_to('https://github.com/DevGile', :target => '_blank') do
+          #github-contact
+      .col.col-md-3
+        = link_to('https://www.facebook.com/DevGile', :target => '_blank') do
+          #facebook-contact
+  #phone-contact
+    = link_to 'tel:+14155068410' do
+      %span.glyphicon.glyphicon-earphone
+      %p (415) 506-8410
