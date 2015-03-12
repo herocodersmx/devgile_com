@@ -44,9 +44,11 @@ Execute this in your Terminal:
 middleman build
 ```
 
+This will generate all the static files in the `build` directory, ready to be used 
+
 ### Using Pow as your web server
 
-If you use [Pow](http://pow.cx), you can open the Middleman server for development, you just need to execute:
+If you use [Pow](http://pow.cx), you can use it as your Middleman server:
 
 ```sh
 # Link application
