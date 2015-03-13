@@ -2,6 +2,8 @@
 @import '../images/icons/*.png'
 @include all-icons-sprites
 
+@import 'variables'
+
 body
   background: #262626
   display: block
@@ -11,7 +13,7 @@ body
 #main-wrapper
   display: block
   margin: 0 auto
-  max-width: 1200px
+  max-width: $max_width
   width: 100%
 
 .col
@@ -29,5 +31,7 @@ body
   font-weight: 700
   text-transform: uppercase
 
-.icon
-  background: url('../images/icons-s2fd946ace2.png')
+.stuck
+  max-width: $max_width
+  position: fixed
+  top: 0
