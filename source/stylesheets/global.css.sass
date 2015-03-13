@@ -1,3 +1,5 @@
+@import 'variables'
+
 body
   background: #262626 url('../images/background.png')
   display: block
@@ -7,7 +9,7 @@ body
 #main-wrapper
   display: block
   margin: 0 auto
-  max-width: 1200px
+  max-width: $max_width
   width: 100%
 
 .col
@@ -26,5 +28,6 @@ body
   text-transform: uppercase
 
 .stuck
+  max-width: $max_width
   position: fixed
   top: 0
