@@ -1,3 +1,6 @@
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
+//= require waypoints
+//= require sticky
+//= require inview
+//= require utils
