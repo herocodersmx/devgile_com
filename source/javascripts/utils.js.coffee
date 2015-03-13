@@ -7,6 +7,11 @@ $(document).ready ->
   class DevGile.Utils
     constructor: ->
       @bindEvents()
+      setTimeout(=>
+        @setVariables()
+      , 300)
+
+    setVariables: ->
       @menuHeight  = $('#main-menu').innerHeight()
       @aboutTop    = $('#about_us').position().top - @menuHeight
       @clientsTop  = $('#clients').position().top - @menuHeight
