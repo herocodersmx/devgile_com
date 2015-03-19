@@ -24,6 +24,7 @@ $(document).ready ->
 
       $('#main-menu a').on 'click', (event) =>
         @changeMenuActiveTo event.currentTarget
+        @trackEvent('click', $( event.currentTarget).attr('id'))
 
     setActiveMenu: ->
       scrollTop = $(window).scrollTop()
@@ -45,5 +46,8 @@ $(document).ready ->
 
     cleanMenuActive: ->
       $('#main-menu a.active').removeClass('active')
+
+    trackEvent: (event_type, description)->
+      ga('send', 'event', event_type, description)
 
   window.utils = new DevGile.Utils()

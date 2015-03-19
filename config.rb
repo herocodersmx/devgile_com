@@ -1,3 +1,5 @@
+require 'rack/google-analytics'
+
 ###
 # Compass
 ###
@@ -46,6 +48,11 @@
 #     "Helping"
 #   end
 # end
+
+###
+# Google Analytics
+###
+use Rack::GoogleAnalytics, :tracker => 'UA-51688410-1'
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
