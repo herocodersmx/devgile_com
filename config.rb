@@ -58,6 +58,10 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+%w(about_us clients technologies contact_us).each do |name|
+  proxy "/#{name}", '/index.html'
+end
+
 # Build-specific configuration
 configure :build do
   activate :i18n
