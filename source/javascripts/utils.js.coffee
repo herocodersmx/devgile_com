@@ -9,7 +9,8 @@ $(document).ready ->
       @bindEvents()
       setTimeout(=>
         @setVariables()
-      , 300)
+        @validateRoute()
+      , 100)
 
     setVariables: ->
       @menuHeight  = $('#main-menu').innerHeight()
@@ -23,8 +24,12 @@ $(document).ready ->
         @setActiveMenu()
 
       $('#main-menu a').on 'click', (event) =>
-        @changeMenuActiveTo event.currentTarget
-        @trackEvent('click', $( event.currentTarget).attr('id'))
+        event.preventDefault()
+        element = event.currentTarget
+
+        @evaluateLink(element)
+        @changeMenuActiveTo(element)
+        @trackEvent('click', $(element).attr('id'))
 
     setActiveMenu: ->
       scrollTop = $(window).scrollTop()
@@ -49,5 +54,25 @@ $(document).ready ->
 
     trackEvent: (event_type, description)->
       ga('send', 'event', event_type, description)
+
+    evaluateLink: (element)->
+      #e.g. id = menu-about_us
+      section = $(element).attr('href').replace('/', '')
+      history.pushState({}, '', "/#{section}")
+      @pageGoTo(section)
+
+    validateRoute: ->
+      path = window.location.pathname
+      @pageGoTo path.replace('/', '')
+
+    pageGoTo: (section)->
+      if section is 'about_us'
+        $(window).scrollTop(@aboutTop)
+      else if section is 'clients'
+        $(window).scrollTop(@clientsTop)
+      else if section is 'technologies'
+        $(window).scrollTop(@techTop)
+      else if section is 'contact_us'
+        $(window).scrollTop(@contactTop)
 
   window.utils = new DevGile.Utils()
