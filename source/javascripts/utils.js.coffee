@@ -75,4 +75,6 @@ $(document).ready ->
       else if section is 'contact_us'
         $(window).scrollTop(@contactTop)
 
+      false
+
   window.utils = new DevGile.Utils()
