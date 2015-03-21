@@ -1,8 +1,17 @@
 $(document).ready ->
+  window.DevGile ||= {}
+
   sticky = new Waypoint.Sticky
     element: $('#main-menu')[0]
 
-  window.DevGile ||= {}
+  $('#main-wrapper').fullpage(
+    css3: true,
+    scrollingSpeed: 700,
+    paddingTop: '0',
+    paddingBottom: '0',
+    fixedElements: '.sticky-wrapper',
+    sectionSelector: '.section'
+  )
 
   class DevGile.Utils
     constructor: ->
