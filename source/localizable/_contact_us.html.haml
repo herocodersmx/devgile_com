@@ -1,20 +1,23 @@
-#contact_us.main-section
-  .section-title Contact us
-  #social-links
-    .row
-      .col.col-md-3
-        = link_to('mailto:contact@devgile.com') do
-          #email-contact.icon
-      .col.col-md-3
-        = link_to('https://twitter.com/devgile', :target => '_blank') do
-          #twitter-contact.icon
-      .col.col-md-3
-        = link_to('https://github.com/DevGile', :target => '_blank') do
-          #github-contact.icon
-      .col.col-md-3
-        = link_to('https://www.facebook.com/DevGile', :target => '_blank') do
-          #facebook-contact.icon
-  #phone-contact
-    = link_to 'tel:+14155068410' do
-      %span.glyphicon.glyphicon-earphone
-      %p (415) 506-8410
+#contact_us.main-section.section
+  .section-container
+    .section-title Contact us
+    #social-links
+      .row
+        .col.col-md-3
+          = link_to('mailto:contact@devgile.com') do
+            #email-contact.icon
+        .col.col-md-3
+          = link_to('https://twitter.com/devgile', :target => '_blank') do
+            #twitter-contact.icon
+        .col.col-md-3
+          = link_to('https://github.com/DevGile', :target => '_blank') do
+            #github-contact.icon
+        .col.col-md-3
+          = link_to('https://www.facebook.com/DevGile', :target => '_blank') do
+            #facebook-contact.icon
+    #phone-contact
+      = link_to 'tel:+14155068410' do
+        %span.glyphicon.glyphicon-earphone
+        %p (415) 506-8410
+
+    = partial 'localizable/footer'
