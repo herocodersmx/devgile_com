@@ -58,6 +58,9 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+# use pretty URLs (needs to be above the proxy to work properly)
+activate :directory_indexes
+
 %w(about_us clients technologies contact_us).each do |name|
   proxy "/#{name}.html", '/index.html'
 end
@@ -65,9 +68,6 @@ end
 # Build-specific configuration
 configure :build do
   activate :i18n
-
-  # use pretty URLs
-  activate :directory_indexes
 
   # For example, change the Compass output style for deployment
   activate :minify_css
