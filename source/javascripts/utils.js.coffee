@@ -8,6 +8,7 @@ $(document).ready ->
     paddingBottom: '0',
     fixedElements: '#main-menu',
     sectionSelector: '.section',
+    keyboardScrolling: true,
 
     onLeave: (index, nextIndex, direction) =>
       utils.setActiveMenu()
@@ -21,7 +22,7 @@ $(document).ready ->
       , 100)
 
     bindEvents: ->
-      $('#main-menu a').on 'click', (event) =>
+      $('#main-menu .link-page').on 'click', (event) =>
         event.preventDefault()
         element = event.currentTarget
 
@@ -31,8 +32,12 @@ $(document).ready ->
 
     setActiveMenu: ->
       section = $('.section.active').attr('id')
-      element = $("#main-menu a[href='/#{section}']")
+      path = if section is 'header' then '/' else "/#{section}/"
+      element = $("#main-menu a[href='/#{section}/']")
+
+      @changeUrlTo(path)
       @changeMenuActiveTo(element)
+      @changeMenu(section)
 
     changeMenuActiveTo: (element) ->
       @cleanMenuActive()
@@ -44,11 +49,15 @@ $(document).ready ->
     trackEvent: (event_type, description)->
       ga('send', 'event', event_type, description)
 
+    changeUrlTo: (path)->
+      history.pushState({}, '', path)
+
     evaluateLink: (element)->
       #e.g. id = menu-about_us
       section = $(element).attr('href').replace('/', '')
       page = $(element).data('page')
-      history.pushState({}, '', "/#{section}")
+
+      @changeUrlTo("/#{section}")
       @pageGoTo(page)
 
     validateRoute: ->
@@ -60,7 +69,16 @@ $(document).ready ->
         @pageGoTo page
 
     pageGoTo: (page)->
-      $.fn.fullpage.moveTo(page)
+      if page > 1
+        $.fn.fullpage.moveTo(page)
+      else
+        $.fn.fullpage.moveTo(1)
       false
+
+    changeMenu: (section) ->
+      if section is 'header'
+        $('#logo-container a').addClass('hidden')
+      else if section isnt 'header'
+        $('#logo-container a').removeClass('hidden')
 
   window.utils = new DevGile.Utils()

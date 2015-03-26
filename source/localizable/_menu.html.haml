@@ -1,9 +1,29 @@
 #main-menu.main-section
+  #logo-container
+    = link_to('/', :class => 'hidden link-page')do
+      .logo-menu
+
   .section-container
-    .row
-      #menu-container.col-md-6.col-md-offset-3
-        .row
-          = link_to('About us', '/about_us/', :class => 'col col-md-3', :id => 'menu-about_us', :data => { :page => 2 })
-          = link_to('Clients', '/clients/', :class => 'col col-md-3', :id => 'menu-clients', :data => { :page => 3 })
-          = link_to('Technology', '/technologies/', :class => 'col col-md-3', :id => 'menu-technologies', :data => { :page => 4 })
-          = link_to('Contact', '/contact_us/', :class => 'col col-md-3', :id => 'menu-contact_us', :data => { :page => 5 })
+    #menu-container
+      .row
+        .telephone-section.col.col-md-2
+          = link_to 'tel:+14155068410' do
+            %span.glyphicon.glyphicon-earphone
+            %p (415) 506-8410
+
+        = link_to('About us', '/about_us/', :class => 'col col-md-2 link-page', :id => 'menu-about_us', :data => { :page => 2 })
+        = link_to('Clients', '/clients/', :class => 'col col-md-2 link-page', :id => 'menu-clients', :data => { :page => 3 })
+        = link_to('Technology', '/technologies/', :class => 'col col-md-2 link-page', :id => 'menu-technologies', :data => { :page => 4 })
+        = link_to('Contact', '/contact_us/', :class => 'col col-md-2 link-page', :id => 'menu-contact_us', :data => { :page => 5 })
+
+        .social-links.col.col-md-2
+          %ul
+            %li
+              = link_to 'https://twitter.com/devgile', :target => '_blank' do
+                .icon.twitter
+            %li
+              = link_to 'https://github.com/DevGile', :target => '_blank' do
+                .icon.github
+            %li
+              = link_to 'https://www.facebook.com/DevGile', :target => '_blank' do
+                .icon.facebook
