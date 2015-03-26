@@ -5,25 +5,30 @@
 
   .section-container
     #menu-container
-      .row
-        .telephone-section.col.col-md-2
-          = link_to 'tel:+14155068410' do
-            %span.glyphicon.glyphicon-earphone
-            %p (415) 506-8410
+      %ul#menu-options.row
+        %li.col.col-md-2
+          = link_to('About us', '/about_us/', :class => 'link-page', :id => 'menu-about_us', :data => { :page => 2 })
+        %li.col.col-md-2
+          = link_to('Clients', '/clients/', :class => 'link-page', :id => 'menu-clients', :data => { :page => 3 })
+        %li.col.col-md-2
+          = link_to('Technology', '/technologies/', :class => 'link-page', :id => 'menu-technologies', :data => { :page => 4 })
+        %li.col.col-md-2
+          = link_to('Contact', '/contact_us/', :class => 'link-page', :id => 'menu-contact_us', :data => { :page => 5 })
 
-        = link_to('About us', '/about_us/', :class => 'col col-md-2 link-page', :id => 'menu-about_us', :data => { :page => 2 })
-        = link_to('Clients', '/clients/', :class => 'col col-md-2 link-page', :id => 'menu-clients', :data => { :page => 3 })
-        = link_to('Technology', '/technologies/', :class => 'col col-md-2 link-page', :id => 'menu-technologies', :data => { :page => 4 })
-        = link_to('Contact', '/contact_us/', :class => 'col col-md-2 link-page', :id => 'menu-contact_us', :data => { :page => 5 })
+        %li#menu-contact.col.col-md-4
+          .telephone-section
+            = link_to 'tel:+14155068410' do
+              %span.glyphicon.glyphicon-earphone
+              %p (415) 506-8410
 
-        .social-links.col.col-md-2
-          %ul
-            %li
-              = link_to 'https://twitter.com/devgile', :target => '_blank' do
-                .icon.twitter
-            %li
-              = link_to 'https://github.com/DevGile', :target => '_blank' do
-                .icon.github
-            %li
-              = link_to 'https://www.facebook.com/DevGile', :target => '_blank' do
-                .icon.facebook
+          .social-links
+            %ul
+              %li
+                = link_to 'https://twitter.com/devgile', :target => '_blank' do
+                  .icon.twitter
+              %li
+                = link_to 'https://github.com/DevGile', :target => '_blank' do
+                  .icon.github
+              %li
+                = link_to 'https://www.facebook.com/DevGile', :target => '_blank' do
+                  .icon.facebook
