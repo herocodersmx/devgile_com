@@ -1,8 +1,9 @@
 @import 'variables'
 
 #main-menu
-  box-shadow: #231E1E 0 0 5px 1px
+  border: none
   background: rgba(0, 0, 0, 0.5)
+  box-shadow: #231E1E 0 0 5px 1px
   height: 50px
   position: fixed
   top: 0
@@ -59,24 +60,6 @@
       &:hover, &.active
         text-decoration: none
 
-    .telephone-section
-      float: left
-      line-height: 16px
-
-      a
-        color: white
-        display: inline-block
-
-        span
-          float: left
-          margin: 0 5px 0 0
-
-        p
-          float: left
-          font-size: 15px
-          font-weight: 300
-          margin: 0
-
     .social-links
       float: right
       text-align: left
@@ -104,6 +87,45 @@
         margin: 0
         width: 8px
 
+  .telephone-section
+    float: left
+    line-height: 16px
+
+    a
+      color: white
+      display: inline-block
+
+      span
+        float: left
+        margin: 0 5px 0 0
+
+      p
+        float: left
+        font-size: 15px
+        font-weight: 300
+        margin: 0
+
+  #mobile-options
+    float: right
+    height: 50px
+    width: 250px
+    padding: 10px
+
+    .mobile-button
+      background: $grey_dark
+      border-radius: 5px
+      color: white
+      float: right
+      height: 30px
+      width: 30px
+
+      .icon-bar
+        background: white
+        border-radius: 1px
+        display: block
+        height: 2px
+        width: 22px
+
 @media only screen and (max-width: 1325px)
   #main-menu
     .section-container
@@ -117,7 +139,7 @@
 
       #menu-container
         #menu-options > li
-          padding: 15px 5px
+          padding: 15px 0
 
           &#menu-contact
             padding: 15px 15px 15px 5px
@@ -127,3 +149,9 @@
 
         li.col-md-4
           width: 40%
+
+@media only screen and (max-width: 815px)
+  #main-menu
+    .section-container
+      .social-links, #menu-options
+        display: none
