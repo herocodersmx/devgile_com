@@ -21,6 +21,8 @@
       height: 40px
       width: 92px
 
+  .closed, .opened
+    display: inline-block
 
   #menu-container
     width: 100%
@@ -106,17 +108,19 @@
         margin: 0
 
   #mobile-options
+    display: none
     float: right
     height: 50px
-    width: 250px
     padding: 10px
+    width: 250px
 
     .mobile-button
-      background: $grey_dark
       border-radius: 5px
       color: white
+      cursor: pointer
       float: right
       height: 30px
+      padding: 4px
       width: 30px
 
       .icon-bar
@@ -124,6 +128,7 @@
         border-radius: 1px
         display: block
         height: 2px
+        margin: 4px 0
         width: 22px
 
 @media only screen and (max-width: 1325px)
@@ -152,6 +157,32 @@
 
 @media only screen and (max-width: 815px)
   #main-menu
+    height: auto
+
+    .closed
+      display: none
+
     .section-container
-      .social-links, #menu-options
-        display: none
+      float: none
+      width: 100%
+
+      #menu-container #menu-options
+        li.col-md-2, li.col-md-2 a
+          float: none
+          width: 100%
+
+        li.col-md-2 a
+          text-align: right
+
+        & > li
+          padding: 15px
+
+        #menu-contact
+          display: none
+
+    #mobile-options
+      display: inline-block
+
+      .telephone-section
+        margin-top: 6px
+

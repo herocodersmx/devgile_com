@@ -3,7 +3,9 @@
     = link_to('/', :class => 'hidden link-page')do
       .logo-menu
 
-  .section-container
+  = partial 'localizable/mobile_options'
+
+  .section-container.closed
     #menu-container
       %ul#menu-options.row
         %li.col.col-md-2
@@ -16,10 +18,7 @@
           = link_to('Contact', '/contact_us/', :class => 'link-page', :id => 'menu-contact_us', :data => { :page => 5 })
 
         %li#menu-contact.col.col-md-4
-          .telephone-section
-            = link_to 'tel:+14155068410' do
-              %span.glyphicon.glyphicon-earphone
-              %p (415) 506-8410
+          = partial 'localizable/telephone'
 
           .social-links
             %ul
@@ -33,13 +32,3 @@
                 = link_to 'https://www.facebook.com/DevGile', :target => '_blank' do
                   .icon.facebook
 
-  #mobile-options
-    .telephone-section
-      = link_to 'tel:+14155068410' do
-        %span.glyphicon.glyphicon-earphone
-        %p (415) 506-8410
-
-    .mobile-button
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
