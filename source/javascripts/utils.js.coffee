@@ -30,6 +30,9 @@ $(document).ready ->
         @changeMenuActiveTo(element)
         @trackEvent('click', $(element).attr('id'))
 
+      $('#mobile-options .mobile-button').on 'click',  =>
+        @toggleMenu()
+
     setActiveMenu: ->
       section = $('.section.active').attr('id')
       path = if section is 'header' then '/' else "/#{section}/"
@@ -80,5 +83,15 @@ $(document).ready ->
         $('#logo-container a').addClass('hidden')
       else if section isnt 'header'
         $('#logo-container a').removeClass('hidden')
+
+    toggleMenu: ->
+      menu = $('#main-menu .section-container')
+      if menu.hasClass('opened')
+        menu.removeClass('opened')
+        menu.addClass('closed')
+      else
+        menu.removeClass('closed')
+        menu.addClass('opened')
+
 
   window.utils = new DevGile.Utils()
