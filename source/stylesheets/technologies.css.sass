@@ -57,3 +57,57 @@
 
       .backbone
         margin: 0 0 0 10%
+
+@media only screen and (max-width: 600px)
+  #technologies
+    .section-container
+      height: 730px
+      padding: 50px
+
+    #technologies-list
+      position: relative
+
+      .col
+        position: absolute
+
+      .col.col-md-3, .col.col-md-4, .col.col-md-6, .col.col-md-12
+        width: 45%
+
+        .stack-item
+          margin: 0 auto
+
+      & > .row:first-child > .col:first-child //cucumber
+        left: 0
+        top: 0
+      & > .row:first-child > .col:nth-child(2) //ruby
+        left: 45%
+        top: 0
+      & > .row:first-child > .col:nth-child(3) //android
+        left: 0
+        top: 110px
+      & > .row:first-child > .col:last-child //postgres
+        left: 45%
+        top: 110px
+      & > .row:nth-child(2) > .col:first-child //boostrap
+        left: 0
+        top: 220px
+      & > .row:nth-child(2) > .col:nth-child(2) //rails
+        left: 45%
+        top: 220px
+      & > .row:nth-child(2) > .col:last-child //backbone
+        left: 0
+        top: 330px
+      & > .row:nth-child(3) > .col:first-child //ruby-motion
+        left: 45%
+        top: 330px
+      & > .row:nth-child(3) > .col:last-child //mysql
+        left: 0
+        top: 440px
+      & > .row:nth-child(4) > .col:first-child //heroku
+        left: 45%
+        top: 440px
+
+@media only screen and (max-width: 320px)
+  #technologies
+    .section-container
+      padding: 50px 20px
