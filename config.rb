@@ -67,8 +67,8 @@ end
 
 activate :cdn do |cdn|
   cdn.cloudfront = {
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'] || 'AKIAI74B6TIUKUYQDEOQ',
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] || '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',
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       distribution_id: 'E3SGK3O1XI3SL0'
   }
 
