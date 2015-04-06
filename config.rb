@@ -61,6 +61,8 @@ configure :build do
   activate :search_engine_sitemap, default_priority: 0.5,
       default_change_frequency: 'monthly'
 
+  activate :dotenv
+
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
