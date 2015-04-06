@@ -4,7 +4,7 @@
     #social-links
       .row
         .col.col-md-3
-          = link_to('mailto:contact@devgile.com') do
+          = link_to('mailto:contact@devgile.com', :target => '_blank') do
             #email-contact.icon
         .col.col-md-3
           = link_to('https://twitter.com/devgile', :target => '_blank') do
@@ -16,8 +16,6 @@
           = link_to('https://www.facebook.com/DevGile', :target => '_blank') do
             #facebook-contact.icon
     #phone-contact
-      = link_to 'tel:+14155068410' do
-        %span.glyphicon.glyphicon-earphone
-        %p (415) 506-8410
+      = partial 'localizable/telephone'
 
     = partial 'localizable/footer'

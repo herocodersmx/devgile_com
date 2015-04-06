@@ -42,13 +42,15 @@
       & > li
         display: inline-block
         height: 50px
-        padding: 15px
 
         &:hover, &.active
           background: $grey_dark
 
         &#menu-contact:hover
           background: none
+
+        .link-page, &#menu-contact
+          padding: 15px
 
     .link-page
       color: white
@@ -144,7 +146,8 @@
 
       #menu-container
         #menu-options > li
-          padding: 15px 0
+          .link-page, &#menu-contact
+            padding: 15px 0
 
           &#menu-contact
             padding: 15px 15px 15px 5px
@@ -175,7 +178,8 @@
           text-align: right
 
         & > li
-          padding: 15px
+          .link-page, &#menu-contact
+            padding: 15px
 
         #menu-contact
           display: none
