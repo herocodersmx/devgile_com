@@ -18,6 +18,10 @@ activate :directory_indexes
   proxy "/#{name}.html", '/index.html'
 end
 
+def cdn_enabled?
+  ENV['AWS_ACCESS_KEY_ID'] && ENV['AWS_SECRET_ACCESS_KEY'] && ENV['AWS_DISTRIBUTION_ID']
+end
+
 activate :cdn do |cdn|
   cdn.cloudfront = {
       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
@@ -27,7 +31,7 @@ activate :cdn do |cdn|
 
   #cdn.filter= /\.html/i     #default /.*/
   cdn.after_build = true
-end
+end if cdn_enabled?
 
 # Build-specific configuration
 configure :build do
@@ -46,7 +50,7 @@ configure :build do
 
   set :asset_host do |asset|
     '//cdn.devgile.com'
-  end
+  end if cdn_enabled?
 
   ignore 'images/icons/*'
 
