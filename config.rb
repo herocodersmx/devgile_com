@@ -67,6 +67,17 @@ activate :directory_indexes
   proxy "/#{name}.html", '/index.html'
 end
 
+activate :cdn do |cdn|
+  cdn.cloudfront = {
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      distribution_id: ENV['AWS_DISTRIBUTION_ID']
+  }
+
+  #cdn.filter= /\.html/i     #default /.*/
+  cdn.after_build = true
+end
+
 # Build-specific configuration
 configure :build do
   activate :i18n
@@ -79,6 +90,12 @@ configure :build do
 
   # Enable cache buster
   activate :asset_hash
+
+  activate :asset_host
+
+  set :asset_host do |asset|
+    '//cdn.devgile.com'
+  end
 
   ignore 'images/icons/*'
 
