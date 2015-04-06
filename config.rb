@@ -57,6 +57,8 @@ use Rack::GoogleAnalytics, :tracker => 'UA-51688410-1'
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+set :url_root, 'http://www.devgile.com/'
+
 
 # use pretty URLs (needs to be above the proxy to work properly)
 activate :directory_indexes
@@ -99,6 +101,10 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+
+  #Sitemap
+  activate :search_engine_sitemap, default_priority: 0.5,
+      default_change_frequency: 'monthly'
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
