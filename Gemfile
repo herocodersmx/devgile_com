@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'middleman', '~>3.3.10'
 gem 'middleman-sprockets', :github => 'middleman/middleman-sprockets'
 gem 'middleman-livereload', '~> 3.1.0'
+gem 'middleman-search_engine_sitemap'
 
 gem 'bootstrap-sass', :require => false
 gem 'coffee-script'
