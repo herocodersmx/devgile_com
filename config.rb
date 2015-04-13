@@ -22,19 +22,10 @@ def cdn_enabled?
   ENV['AWS_ACCESS_KEY_ID'] && ENV['AWS_SECRET_ACCESS_KEY'] && ENV['AWS_DISTRIBUTION_ID']
 end
 
-activate :cdn do |cdn|
-  cdn.cloudfront = {
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      distribution_id: ENV['AWS_DISTRIBUTION_ID']
-  }
-
-  #cdn.filter= /\.html/i     #default /.*/
-  cdn.after_build = true
-end if cdn_enabled?
-
 # Build-specific configuration
 configure :build do
+  activate :dotenv
+
   activate :i18n
 
   # For example, change the Compass output style for deployment
@@ -60,6 +51,17 @@ configure :build do
   #Sitemap
   activate :search_engine_sitemap, default_priority: 0.5,
       default_change_frequency: 'monthly'
+
+  activate :cdn do |cdn|
+    cdn.cloudfront = {
+        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+        distribution_id: ENV['AWS_DISTRIBUTION_ID']
+    }
+
+    cdn.filter= /\.html/i     #default /.*/
+    cdn.after_build = true
+  end if cdn_enabled?
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

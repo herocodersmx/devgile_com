@@ -27,6 +27,9 @@ cd devgile
 gem install bundler --no-ri --no-rdoc
 rbenv rehash
 
+#Create `.env` file and set or modify the environment variables. Using  `.env.example`
+cp .env.example .env
+
 # Start Middleman server
 middleman server
 
