@@ -18,6 +18,18 @@
       &:hover
         opacity: 0.8
 
+    .row:nth-child(2)
+      .col:first-child .stack-item
+        margin: 0 0 0 60%
+      .col:last-child .stack-item
+        margin: 0 0 0 20%
+
+    .row:nth-child(3)
+      .col:first-child .stack-item
+        margin: 0 0 0 66%
+      .col:last-child .stack-item
+        margin: 0 0 0 18%
+
     .cucumber
       background-position: 0 1287px
     .ruby
@@ -28,18 +40,14 @@
       background-position: 0 598px
     .boostrap
       background-position: 0 -202px
-      margin: 0 0 0 60%
     .rails
       background-position: 0 498px
     .backbone
       background-position: 0 -102px
-      margin: 0 0 0 20%
     .ruby-motion
       background-position: 0 181px
-      margin: 0 0 0 66%
     .mysql
       background-position: 0 746px
-      margin: 0 0 0 18%
     .heroku
       background-position: 0 -569px
 
@@ -58,8 +66,14 @@
         display: inline-block
         width: 49%
 
-      .backbone
-        margin: 0 0 0 10%
+      .row:nth-child(2)
+        .col:first-child .stack-item
+          margin: 0 0 0 45%
+        .col:last-child .stack-item
+          margin: 0 0 0 10%
+      .row:nth-child(3)
+        .col:first-child .stack-item
+          margin: 0 0 0 55%
 
 @media only screen and (max-width: 600px)
   #technologies
@@ -76,8 +90,12 @@
       .col.col-md-3, .col.col-md-4, .col.col-md-6, .col.col-md-12
         width: 45%
 
-        .stack-item
-          margin: 0 auto
+      .row:nth-child(2) .col:first-child .stack-item,
+      .row:nth-child(2) .col:last-child .stack-item,
+      .row:nth-child(3) .col:first-child .stack-item,
+      .row:nth-child(3) .col:first-last .stack-item,
+      .stack-item
+        margin: 0 auto
 
       & > .row:first-child > .col:first-child //cucumber
         left: 0

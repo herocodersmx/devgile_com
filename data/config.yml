@@ -1,0 +1,16 @@
+clients:
+  - posadas
+  - instafit
+  - refundo
+
+technologies:
+  - ruby | https://www.ruby-lang.org/
+  - androi | http://www.android.com/
+  - postgres | http://www.postgresql.org/
+  - boostrap | http://getbootstrap.com/
+  - rails | http://rubyonrails.org/
+  - backbone | http://backbonejs.org/
+  - ruby-motion | http://www.rubymotion.com/
+  - mysql | https://www.mysql.com/
+  - heroku | https://www.heroku.com/features
+  - cucumber | https://cukes.info/
