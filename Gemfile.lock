@@ -58,7 +58,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
-    eventmachine (1.0.7)
+    eventmachine (1.2.3)
     excon (0.45.1)
     execjs (2.4.0)
     faraday (0.8.9)
@@ -295,3 +295,6 @@ DEPENDENCIES
   sass
   tzinfo-data
   wdm (~> 0.1.0)
+
+BUNDLED WITH
+   1.13.7
